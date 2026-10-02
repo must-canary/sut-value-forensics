@@ -28,9 +28,11 @@ const STEPS: Step[] = [
       ['What the research found', 'SUT lost most of its quoted value in May 2026. The investigation is frozen: '
         + 'the mechanism is supported by measurement, but the initiating catalyst — who sold first and why — '
         + 'remains unresolved. Nothing in this application changes that.'],
-      ['The validated mechanism', 'A small net sell imbalance met very thin pool depth. Roughly $27K of net '
-        + 'one-sided flow was enough to move the quoted price by about −62.7%. The price fell because the venue '
-        + 'was shallow, not because a large amount of money left.'],
+      ['The supported mechanism', 'On May 17, the observed pool flow showed approximately $27K net selling '
+        + 'within approximately $784K gross swap activity, while the observed price move was approximately '
+        + '-62.7%. The historical analysis supports shallow/fragile liquidity as a mechanism that can amplify '
+        + 'price impact, but the initiating catalyst remains unresolved. The evidence does not establish that '
+        + 'the net sell imbalance alone caused the price move.'],
       ['The opportunity', 'If thin depth is what turns ordinary flow into a large price move, then depth is the '
         + 'thing to test. That is OPP-01: measure how sensitive the quoted price is to a standardised trade size.'],
       ['The objective of EXP-001', 'Measure price impact at standardised trade sizes before and after a disclosed, '
@@ -50,7 +52,9 @@ const STEPS: Step[] = [
         + 'between readings, before anything is changed.'],
       ['What price impact means', 'The percentage the quoted price moves if one trade of that size is executed '
         + 'right now against the pool. A $10,000 buy moving the price by about +10.6% means the pool is thin: '
-        + 'a small order walks the price a long way. It is a model output from pool state, not an executed trade.'],
+        + 'a small order walks the price a long way. It is a model output from pool state, not an executed trade. '
+        + 'The measurement describes current market-depth sensitivity. It does not predict price movement, '
+        + 'establish causality, or measure business impact.'],
       ['$100,000 is NOT EXECUTABLE', 'The pool cannot fill $100,000 on either side at any of the three captures. '
         + 'No percentage is shown for it, because a number would describe a trade the venue cannot perform. '
         + 'It stays NOT EXECUTABLE and NOT REGISTERABLE until inventory actually supports it.'],
@@ -111,8 +115,10 @@ const STEPS: Step[] = [
     title: 'Intervention',
     where: 'Pre-Registration → Controlled intervention',
     body: [
-      ['A controlled, human-recorded action', 'Someone actually changes the thing being tested — here, disclosed '
-        + 'depth added to the pool — and then records what was done, when it started, and who recorded it.'],
+      ['A controlled, human-recorded action', 'Example only: a controlled, human-recorded intervention could '
+        + 'involve an approved change to executable liquidity/depth around the canonical pool. No such '
+        + 'intervention has been executed in the current experiment state. A human records what was done, when '
+        + 'it started, and who recorded it.'],
       ['Evidence must already exist', 'The record must cite evidence IDs the project already holds. A reference '
         + 'to evidence that does not exist is refused outright.'],
       ['The method is held constant', 'The record must declare the same measurement fingerprint as the baseline. '
