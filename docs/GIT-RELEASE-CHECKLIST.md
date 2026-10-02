@@ -1,27 +1,57 @@
 # Git release checklist
 
-Prepared **2026-10-02**. Nothing has been committed or pushed.
+Prepared **2026-10-02** and revised the same day to record the state as actually committed.
+
+**Current state: 3 commits on `master`, 153 tracked files, no remote configured, nothing pushed.**
+The verification, secret-scan, `work/` audit and fingerprint sections below are unchanged and were
+re-verified against the committed tree.
 
 ---
 
-## 0. Repository initialised, staged, not committed
+## 0. Repository state — committed locally, never pushed
 
 ```
-$ git init
-Initialized empty Git repository in .../SUT Value Forensics/.git/
-$ git add .
-$ git diff --cached --name-only | wc -l
+$ git log --oneline
+<HEAD>   Add the final submission report and update the release checklist
+baf21c8  Clarify Experiment Guide evidence wording
+09ae3b4  Week 2: live market evidence, governance persistence and the Value Improvement Lab
+
+$ git ls-files | wc -l
 153
+
+$ git remote -v
+(no output — no remote is configured)
 ```
 
-**153 files staged, 3.9 MB. Nothing committed. No remote configured. Nothing pushed.**
+**3 commits on `master`. 153 tracked files, 3.6 MB. No remote configured. Nothing pushed.**
 
-The first commit is left to the maintainer:
+This document's own revision ships in the third commit alongside the submission PDF, so that
+commit is the one hash not listed above. The repository history was created as follows:
 
-```bash
-git status                      # review the staged tree
-git commit                      # paste the message from section 7
-```
+| Commit | Contents |
+|---|---|
+| `09ae3b4` | Week 2 implementation — 152 files, +36,533 lines |
+| `baf21c8` | Experiment Guide wording correction — 1 file, +12 −6 |
+| `HEAD` | Submission PDF + this checklist revision — 2 files |
+
+Pushing remains a maintainer decision; no remote has been added and no push has been attempted.
+
+## 0a. Submission artifact
+
+| Item | State |
+|---|---|
+| File | `SUT_Value_Forensics_Final_Comparison_and_Evidence_Report_v2.pdf` |
+| Authoritative location | **repository root** — exactly one copy |
+| Size | 81,805 bytes |
+| SHA-256 | `d130fa2c01c7c879dbcec16275dbece5fe88bf391e07fc86b9702b27167cc062` |
+| Tracked | yes — committed as the submission artifact |
+| Contents | **unmodified**; the PDF was committed byte-for-byte as supplied |
+
+A byte-identical duplicate previously sat under `SUT-Value-Forensics-Research-Handoff/`. Both copies
+were verified to carry the SHA-256 above before the duplicate was removed, so a single authoritative
+copy now exists and nothing unique was lost. `work/_report.txt` — the `pdftotext -layout` extraction
+of the same PDF — was also removed: it was regenerable output, not evidence, and no source file or
+test referenced it.
 
 ## 1. Secret scan — PASS
 
@@ -47,13 +77,17 @@ work/daily-market-store.json         # runtime store written by the cron entrypo
 !work/window.json  !work/exp002_week.json  !work/opp01_baseline.json
 !work/opp01_feasibility.json  !work/pool_BUYS.json
 !work/pool_SELLS_PROCEEDS.json  !work/c1_result.json
+*.zip                                # the research handoff ships as loose files
 ```
+
+The submission PDF at the repository root is **not** ignored — it is tracked deliberately as the
+submission artifact (section 0a).
 
 Excluded by size: `node_modules` 89 MB · `work/` raw dumps 8.3 MB · `e2e/screenshots` 6.0 MB ·
 `dist-tsc` 1.5 MB · `work/daily-market-store.json` 884 KB · `dist` 620 KB.
 
-Verified staged: 153 files, 3.9 MB. No `.env`, `.env.local`, `node_modules`, `dist`, screenshot,
-test artefact, runtime store or large raw dump appears in the staged set.
+Verified committed: 153 files, 3.6 MB. No `.env`, `.env.local`, `node_modules`, `dist`, screenshot,
+test artefact, runtime store or large raw dump appears in the committed tree.
 
 ## 3. `work/` policy - audited and decided
 
@@ -168,17 +202,20 @@ Re-verify at any time:
 sha256sum THESIS.md src/data/hypotheses.ts src/data/evidence.ts src/data/baseline-captures.ts
 ```
 
-## 5. Pre-commit gate — all PASS (2026-10-02)
+## 5. Verification gate — all PASS (re-run 2026-10-02 against the committed tree)
 
 ```
-npm test             575 passed
+npm test             575 passed (19 files)
 npm run typecheck    0 errors
 npm run build        success
 npm run smoke        32/32 checks passed
-npx playwright test  225 passed
+npx playwright test  225 passed (18 files)
 ```
 
-## 6. Content review before the first commit
+Run `npm run build` before `npx playwright test`: the Playwright project serves the built output from
+the preview server, so a stale `dist/` fails the whole suite for reasons unrelated to the code.
+
+## 6. Content review — complete
 
 - [x] No credential, token or key in any tracked file
 - [x] No fabricated measurement, approval, intervention or result
@@ -187,10 +224,13 @@ npx playwright test  225 passed
 - [x] No claim of liquidity, adoption, price or ranking improvement
 - [x] Build output, `node_modules` and regenerable screenshots excluded
 - [x] `work/` audited: scripts and small results committed, large raw dumps ignored (section 3)
-- [x] `git init` run; 153 files staged; **nothing committed, no remote, nothing pushed**
-- [ ] First commit — **maintainer's call, not performed here**
+- [x] Submission PDF committed at the repository root, single copy, contents unmodified (section 0a)
+- [x] Commits created: 3 on `master`; 153 tracked files
+- [x] **No remote configured; nothing pushed** — pushing remains a maintainer decision
 
-## 7. Suggested commit message
+## 7. Commit history
+
+### `09ae3b4` — Week 2 implementation
 
 ```
 Week 2: live market evidence, governance persistence and the Value Improvement Lab
@@ -208,3 +248,22 @@ result exists. No liquidity, adoption, price or ranking improvement is claimed.
 
 Verified: 575 unit tests, 225 Playwright tests, typecheck clean, build clean, smoke 32/32.
 ```
+
+### `baf21c8` — Experiment Guide wording
+
+```
+Clarify Experiment Guide evidence wording
+```
+
+Changed "The validated mechanism" to "The supported mechanism", stated that the net sell imbalance
+alone is not established as the cause, and marked the Step 6 intervention text as an example only.
+
+### `HEAD` — submission artifact
+
+```
+Add the final submission report and update the release checklist
+```
+
+Adds the submission PDF at the repository root as the single authoritative copy and revises this
+checklist to describe the committed state. No source file, test, frozen research file, EXP-001
+baseline, governance record, live-market evidence record or measurement was touched.
