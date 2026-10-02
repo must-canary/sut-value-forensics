@@ -1,0 +1,20 @@
+{
+ "10000": {
+  "buySutNeeded": 23041.229931028214,
+  "buyFillable": true,
+  "sellUsdtNeeded": 9507.155997119738,
+  "sellFillable": true
+ },
+ "50000": {
+  "buySutNeeded": 96234.67640166833,
+  "buyFillable": true,
+  "sellUsdtNeeded": 39707.86644730874,
+  "sellFillable": true
+ },
+ "100000": {
+  "buySutNeeded": 159613.98399936498,
+  "buyFillable": false,
+  "sellUsdtNeeded": 65859.11645108195,
+  "sellFillable": false
+ }
+}

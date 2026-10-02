@@ -1,0 +1,342 @@
+
+===== [PAGE 1] =====
+PIP Week 2 thesis 
+SUT Top-100 Thesis Validation Report
+Current range number of sut token in crypto market
+current market value evidence :
+https://coinmarketcap.com/currencies/supertrust/
+Currently market value number is #301 
+Risks and Red flags:
+contract control: GoPlus (a token security scanner) warns that "the
+contract creator can make changes to the token contract such as disabling
+sells, changing fees, minting, transferring tokens etc." That means the
+issuer can technically change or freeze the token.
+Exchange loss: the BitMart delisting (Mar 2026) removed a trading venue
+without a stated reason.
+PIP Week 2 thesis
+1
+
+
+===== [PAGE 2] =====
+Dependence on one operator: SUT's usefulness depends on one group's
+platforms staying active and honouring the discounts.
+Usage is unproven: Most platforms have little activity, and the main benefit is a
+discount
+for Korean users only.
+Source evidence of contract control
+https://www.coingecko.com/en/coins/super-trust
+SUT vs TOP-100 COINS - COMPARISON
+AND POSSIBILITIES
+Why SUT ranks around #300, why the top 100 are
+there, and what it would take
+Prepared 30 Sep 2026 · QA Engineering, MUST Company
+PIP Week 2 thesis
+2
+
+
+===== [PAGE 3] =====
+Data: live CoinMarketCap listing data, 30 Sep 2026. SUT details are from docs/sut-
+coin-research-2026-09-29.txt .
+Not financial advice. Crypto market data changes daily.
+1. THE GAP IN NUMBERS
+Top-100 band (#90-
+#110)
+SUT (#301)
+Gap
+Market cap to enter top
+100
+$413M (#100 coin)
+$75M
+~5.5x
+Price SUT would need
+~$2.19
+$0.398
+~5.5x
+Daily trading volume
+(median)
+$46M
+~$0.08M
+~600x
+Daily volume / market
+cap (median)
+12.4%
+0.11%
+~110x
+Lowest daily volume in
+band
+$4.1M (meme coin,
+#93)
+~$0.08M
+~50x
+Security audit / verified
+team
+common
+none
+Tier-1 exchange listings
+most (Binance,
+Coinbase, etc.)
+Gate, KuCoin, BingX,
+Uniswap
+Even the weakest coin around #100 trades about 50 times more than SUT every
+day. The price gap (5.5x) is the smaller problem. The trading and trust gap is much
+larger.
+Coins ranked #90-#110 on 29 Sep 2026, for
+reference:
+Rank
+Coin
+Market Cap
+Volume
+#90
+Artificial Superintelligence Alliance
+(FET)
+$530M
+$199.0M
+#91
+Raydium (RAY)
+$516M
+$76.2M
+PIP Week 2 thesis
+3
+
+
+===== [PAGE 4] =====
+Rank
+Coin
+Market Cap
+Volume
+#92
+Midnight (NIGHT)
+$516M
+$39.7M
+#93
+币安人生 (meme)
+$510M
+$4.1M
+#94
+TrueUSD (TUSD)
+$494M
+$17.1M
+#95
+EURC
+$459M
+$66.3M
+#96
+Plasma (XPL)
+$448M
+$145.9M
+#97
+Pieverse (PIEVERSE)
+$429M
+$142.6M
+#98
+Celestia (TIA)
+$423M
+$52.6M
+#99
+Pendle (PENDLE)
+$415M
+$52.7M
+#100
+Bitcoin SV (BSV)
+$413M
+$15.2M
+#101
+SPX6900 (SPX)
+$385M
+$9.5M
+#102
+Lido DAO (LDO)
+$385M
+$82.4M
+#103
+Falcon Finance (FF)
+$376M
+$12.9M
+#104
+BitTorrent [New] (BTT)
+$372M
+$14.0M
+#105
+Pons (PONS)
+$361M
+$46.9M
+#106
+Tezos (XTZ)
+$353M
+$7.6M
+#107
+Kite (KITE)
+$351M
+$23.6M
+#108
+Immutable (IMX)
+$347M
+$18.9M
+#109
+Monad (MON)
+$340M
+$72.0M
+#110
+The Graph (GRT)
+$335M
+$46.1M
+...
+...
+...
+...
+#301
+SuperTrust (SUT)
+$75M
+$0.08M
+2. WHY SUT SITS AROUND #300
+1. The rank comes from an accounting change.
+CoinMarketCap started counting 188.4M SUT as circulating (instead of 2.02M) on
+10 Feb 2026. SUT went from #2,049 to #299 overnight at the same price. It was
+not growth.
+PIP Week 2 thesis
+4
+
+
+===== [PAGE 5] =====
+2. Almost nobody trades it.
+About $70K a day, mostly on one exchange (Gate). Its market cap is not backed
+by real buying and selling.
+3. Trust problems.
+Reported fraud allegations, a bank freeze, a GOPAX delisting, three unexplained
+crashes, and ~71% of tokens in 10 wallets.
+4. Usage is unproven.
+Most platforms have little activity, and the main benefit is a discount for Korean
+users only.
+3. WHY THE TOP-100 COINS ARE THERE,
+BY TYPE
+Real-world assets done properly
+Examples: Tether Gold XAUt (#34), Ondo ONDO (#39), PAX Gold PAXG (#50),
+XDC Network (#74)
+What earns their place: regulated issuers; assets that can be redeemed (PAX Gold
+is 1 token = 1 oz of gold held in custody); regular independent audits of reserves;
+institutional users.
+Payments
+Examples: TRON TRX (#8), Stable (#76), Plasma XPL (#96), Pieverse (#97)
+What earns their place: large real payment volume (mostly stablecoins); open to
+anyone; supported by many wallets and apps.
+Stablecoins
+Examples: TrueUSD TUSD (#94), EURC (#95)
+What earns their place: backed by cash with regular attestations; used
+everywhere as a trading and payment unit.
+PIP Week 2 thesis
+5
+
+
+===== [PAGE 6] =====
+Decentralised finance (DeFi)
+Examples: Raydium RAY (#91), Pendle PENDLE (#99), Lido LDO (#102)
+What earns their place: money locked in the protocol and fee revenue that can be
+seen on-chain; token holders take part in governance.
+Infrastructure
+Examples: Celestia TIA (#98), Tezos XTZ (#106), Monad MON (#109), The Graph
+GRT (#110)
+What earns their place: other projects build on them; developer ecosystems; well-
+known venture backers (a16z, Coinbase Ventures).
+Meme coins
+Examples: 币安人生 (#93), SPX6900 (#101)
+What earns their place: large communities and deep liquidity on major exchanges.
+No utility, but constant real trading.
+4. WHAT THEY DO THAT SUT DOESN'T
+Success factor
+Typical top-100 coin
+SUT today
+Deep, real trading
+$5M-$200M+ a day
+~$0.07M a day
+Listed on big
+exchanges
+Binance, Coinbase, OKX
+Gate, KuCoin, BingX; delisted from
+GOPAX; no longer traded on MEXC
+Independent
+security audit
+Yes, published
+None (CertiK: not audited)
+Known team,
+identity-checked
+Public teams, often with
+venture backing
+No KYC; advisors can't be verified
+Clear regulatory
+standing
+Licensed issuers, especially
+for RWAs
+Bank freeze and a reported
+criminal complaint
+Usage you can
+verify
+Locked value, payment
+volume or active users, on-
+chain
+Company claims only (2,000+
+stores, 40K+ members)
+PIP Week 2 thesis
+6
+
+
+===== [PAGE 7] =====
+Success factor
+Typical top-100 coin
+SUT today
+Real asset backing
+(RWAs)
+Audited reserves the token
+can be redeemed for
+Gold and mine claims unverified
+Open to anyone
+Anyone can build on it or use
+it
+Useful mainly on one operator's
+platforms, in Korea
+Honest data
+One consistent supply figure
+Three conflicting supply figures
+Spread-out holdings
+Wide ownership
+Top 10 wallets hold ~71%
+5. POSSIBILITIES - CAN SUT REACH THE
+TOP 100?
+Mathematically: yes. A price of about $2.19 (with 188.4M circulating) would reach
+the ~$413M threshold. SUT traded above that for most of 2025.
+Realistically: not soon, and not the way it is framed. Two different routes lead
+there, and only one is sound.
+[NOT SOUND] Pushing the price or rank
+Using volume, buybacks or supply-figure changes.
+With markets this thin, the price can be pushed up cheaply, but it collapses
+when support stops. That is what the three past crashes look like.
+It is also market manipulation, which carries legal risk for the people involved.
+[SOUND] Earning it, the way RWA and payment peers did
+1. Fix trust first: register with regulators, resolve the bank and legal issues,
+publish a wallet map and one supply figure, and lock the liquidity.
+2. Prove it is safe: an independent smart-contract audit, a team KYC and a bug
+bounty.
+3. Prove it is used: publish real SoloPay and platform payment volume and active
+users, ideally checkable on-chain.
+4. If "RWA" is the story: back SUT with audited, redeemable assets and regular
+reserve reports, like PAX Gold and Tether Gold.
+PIP Week 2 thesis
+7
+
+
+===== [PAGE 8] =====
+5. Only then apply for bigger exchanges. They check all of the above before
+listing.
+Steps 1-4 realistically take many months, and the legal items are not in the
+company's control alone.
+CONCLUSION FOR THE VALIDATION
+REPORT
+"Top 100 is reachable only if SUT closes the trust, liquidity and proof gaps.
+Today it meets few of the benchmarks the top 100 share."
+SOURCES
+CoinMarketCap listing data (live, 30 Sep 2026):
+https://api.coinmarketcap.com/data-api/v3/cryptocurrency/listing
+https://coinmarketcap.com/
+SUT details:
+SUT Coin Detail Research
+PIP Week 2 thesis
+8

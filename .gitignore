@@ -1,0 +1,47 @@
+# Secrets - server-side only, never committed.
+# .env.local holds CMC_API_KEY for the cron entrypoint; .env.example is the template.
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+dist-tsc/
+node_modules/
+.vite/
+
+# Test artefacts
+e2e/.artifacts/
+
+# Regenerable QA screenshots (~6 MB). e2e/screenshots.spec.ts recreates them on demand.
+e2e/screenshots/
+
+# Python caches from the offline measurement scripts in work/
+__pycache__/
+*.pyc
+
+# ---------------------------------------------------------------------------
+# work/ policy - see docs/GIT-RELEASE-CHECKLIST.md section 3 for the full audit.
+#
+# The measurement SCRIPTS (work/*.py, work/verify.ts) and the research input
+# transcripts (work/*.txt) are committed: they are the provenance of the frozen
+# evidence. Raw transfer dumps, console captures and the runtime store are not:
+# they are large, regenerable, and no source file or test requires them.
+# ---------------------------------------------------------------------------
+work/*.json
+work/*.out
+work/*.err
+work/daily-market-store.json
+
+# ...except the small computed RESULT files, which document the exact numbers
+# that went into the frozen evidence records (~8 KB in total).
+!work/window.json
+!work/exp002_week.json
+!work/opp01_baseline.json
+!work/opp01_feasibility.json
+!work/pool_BUYS.json
+!work/pool_SELLS_PROCEEDS.json
+!work/c1_result.json
+
+# Archives (the research handoff ships as loose files; the zip duplicates them)
+*.zip

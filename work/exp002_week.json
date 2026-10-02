@@ -1,0 +1,12 @@
+{
+ "weekStart": 1789948800,
+ "weekEnd": 1790553600,
+ "blockStart": 94162485,
+ "blockEnd": 94565640,
+ "tsStart": 1789948801,
+ "tsEnd": 1790553600,
+ "rawTransfers": 6330,
+ "intraCluster": 0,
+ "excludedSender": 1899,
+ "activeAddresses": 1423
+}

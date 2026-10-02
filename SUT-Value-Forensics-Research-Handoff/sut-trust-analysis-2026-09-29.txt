@@ -1,0 +1,251 @@
+SUT (SUPERTRUST) - USER TRUST ANALYSIS
+Why user trust is falling, the points flagged, and suggested fixes
+Prepared 29 Sep 2026 · QA Engineering, MUST Company
+==============================================================================
+
+Based on: docs/sut-coin-research-2026-09-29.txt (v2) and its sources, and
+          docs/sut-top100-validation-plan-2026-09-29.txt
+
+Legal items are REPORTED allegations from the media, not findings. Severity
+reflects how much each issue damages trust; it is not a legal judgement.
+Not financial or legal advice.
+
+Severity key:  [CRITICAL]  [HIGH]  [MEDIUM]  [POSITIVE]
+
+
+1. SIGNS THAT TRUST IS FALLING
+------------------------------------------------------------------------------
+  - Price down 97% from the Sep 2025 peak ($14.10-$14.78 -> ~$0.40), with
+    three sharp crashes and no explanation from the project.
+  - Exchanges dropping it: GOPAX delisted SUT (2025); MEXC no longer trades
+    it.
+  - Very little trading: ~$70K a day, about 0.1% of the ~$75M market cap.
+  - A "MSQUARE victims' chat room" existed, meaning some holders see
+    themselves as victims.
+
+
+2. FLAGGED POINTS AND FIXES
+------------------------------------------------------------------------------
+
+A. LEGAL, BANKING AND REGULATORY
+
+ #1 [CRITICAL] Reported criminal complaint
+    Finding: A reporter filed a complaint alleging fraud and illegal
+             fund-raising (유사수신) against MSQUARE GLOBAL and affiliates
+             including SuperTrust, over the "SuperSave" scheme. It reportedly
+             involves 30,000+ investors. Unproven; the outcome is unknown.
+    Fix:     Publish a clear, lawyer-reviewed statement and give regular
+             updates. Pause any product that promises returns until it has
+             regulatory clearance.
+
+ #2 [CRITICAL] Bank account freeze
+    Finding: Shinhan Bank froze SuperTrust's deposits (Apr 2025) after
+             ~KRW 200B in transactions, treating it as an unregistered
+             virtual-asset business. A Seoul court upheld the freeze
+             (30 Apr 2025); the company appealed.
+    Fix:     Register properly as a virtual-asset business (VASP) in Korea,
+             or stop the activity that needs registration. Tell users what
+             is being done.
+
+ #3 [CRITICAL] Exchange delisting (GOPAX)
+    Finding: GOPAX ended support for SUT, reportedly citing possible legal
+             violations and failure to disclose material matters.
+    Fix:     Fix the disclosure gaps the exchange raised, and publish
+             material information on a regular schedule.
+
+ #4 [HIGH] Lawsuits against critics
+    Finding: Defamation action against the operator of the victims' chat
+             room (sent to prosecutors on 12 Nov 2025), plus a ~KRW 2B
+             damages claim.
+    Fix:     Answer complaints openly with a public FAQ and a support /
+             refund process, instead of suing. Lawsuits against users look
+             like silencing.
+
+B. MONEY AND TOKEN PRACTICES
+
+ #5 [CRITICAL] Returns-style and price-support offers
+    Finding: - A buyback at KRW 18,000 (KRW 10B total).
+             - "1,000 SUT -> 2,000 USDT", only for people who join SuperSave.
+             - A published plan for a "short-term SUT value surge".
+    Fix:     Stop offers that look like guaranteed returns or price
+             support. Any buyback should be unconditional, announced in
+             advance, and funded transparently.
+
+ #6 [HIGH] Supply claims contradict each other
+    Finding: - "Zero reserve / 100% private sale" is claimed, but GOPAX
+               found the foundation held 47.8% (Dec 2024).
+             - Three different "circulating" figures are published:
+               188.4M, 46.6M and 2.02M.
+    Fix:     Publish one wallet map (team, treasury, lock-up addresses and
+             balances). Report one circulating figure everywhere.
+
+ #7 [HIGH] Concentrated holdings
+    Finding: The top 10 wallets hold ~71% (~50% excluding the dead
+             address). One unlabelled wallet holds 21% (50M SUT, received
+             21 Oct 2025).
+    Fix:     Label the large wallets publicly, and put team and treasury
+             tokens under an on-chain time lock that anyone can verify.
+
+ #8 [HIGH] Liquidity not locked
+    Finding: About 97% of the main Uniswap pool (~$91K) is controlled by 4
+             wallets, and none of it is locked.
+    Fix:     Lock the liquidity in a public lock contract, or disclose who
+             provides it.
+
+ #9 [MEDIUM] "Burn" didn't reduce total supply
+    Finding: 50M SUT was sent to the dead address (Mar 2024), but the
+             official total supply still reads 238,403,732.
+    Fix:     Explain this clearly, or use a real burn so the total supply
+             falls.
+
+ #10 [MEDIUM] Regulatory relabelling
+    Finding: The KWT coin was relabelled from stablecoin to utility coin to
+             avoid stablecoin rules.
+    Fix:     Stop relabelling products to get around regulation. It reads as
+             evasion.
+
+C. MARKET BEHAVIOUR
+
+ #11 [CRITICAL] Unexplained crashes
+    Finding: -75% (Sep 2025); down to ~$0.44 (Dec 2025); -80% in two days
+             (May 2026).
+    Fix:     After any large price move, publish what happened, including
+             any team or treasury wallet movements. Silence feeds rumours.
+
+ #12 [HIGH] Suspicious trading volume
+    Finding: $47M-$73M a day in late 2025 against a ~$3M market cap. This
+             pattern is often associated with fake trading (wash trading).
+    Fix:     Work only with exchanges that monitor their markets. Publish
+             any market-maker agreements.
+
+ #13 [HIGH] Rank from an accounting change
+    Finding: #2,049 -> #299 overnight on 10 Feb 2026, when the counted
+             circulating supply changed from 2.02M to 188.4M. It was not
+             driven by price or adoption.
+    Fix:     Don't promote the rank as an achievement. Informed users can see
+             how it happened.
+
+ #14 [MEDIUM] Thin market
+    Finding: The ±2% order book is only ~$4K-$12K deep, so it is hard to
+             exit a position.
+    Fix:     Grow real depth through proper, disclosed listings and market
+             making, and through real payment use.
+
+D. TRANSPARENCY AND COMMUNICATION
+
+ #15 [HIGH] MSQUARE relationship denied against the evidence
+    Finding: SuperTrust says it and MSQUARE GLOBAL are "separate businesses"
+             (8 Aug 2026). But news reports call it an MSQUARE affiliate, the
+             two filed lawsuits together, and the site code uses msquare_
+             labels.
+    Fix:     State the corporate relationship accurately. A denial that the
+             evidence contradicts damages trust more than the relationship.
+
+ #16 [HIGH] Advisors can't be verified
+    Finding: The claimed TON Network and Outlier Ventures advisors can't be
+             found anywhere, including the whitepaper and the project site.
+    Fix:     Remove unverifiable claims, or publish confirmation from the
+             advisors themselves.
+
+ #17 [MEDIUM] No audit, no team identity check (KYC), no bug bounty
+    Finding: CertiK lists: not audited, no third-party audit, no KYC, no bug
+             bounty; holder concentration "High".
+    Fix:     Commission an independent smart-contract audit and a team KYC,
+             and publish both. Start a bug bounty.
+
+ #18 [MEDIUM] Messy public data
+    Finding: - Trackers disagree on the all-time high ($14.10-$14.78, with
+               outliers), on supply and on rank.
+             - CoinMarketCap's AI pages mixed SUT up with Sanity United,
+               another token that uses the same ticker.
+    Fix:     Keep the project's CoinMarketCap and CoinGecko profiles correct
+             and up to date, and ask them to fix the mix-up.
+
+ #19 [POSITIVE] Under-communicated strength
+    Finding: Contract ownership was renounced (20 Jul 2026). The code is
+             verified, cannot mint, has no fees or blacklist, and can no
+             longer be paused.
+    Fix:     Tell users, with the transaction link. It is a real trust point
+             that most people don't know about.
+
+E. PRODUCT AND UTILITY
+
+ #20 [HIGH] Most platforms are unproven
+    Finding: - ZERO PLUS app: 50+ downloads.
+             - AI Studio 48 and SUT GOLD Connect: no product found.
+             - L2U and NATURUBOOK: run by other companies.
+             - The SuperTrust app is real (10K+ downloads).
+    Fix:     Focus on one or two platforms that actually work, publish real
+             usage numbers, and drop features that exist only as
+             announcements.
+
+ #21 [MEDIUM] Narrow benefit
+    Finding: The 30-50% fee discount, SUT's main selling point, applies only
+             to South Korean users of the operator's own platforms.
+    Fix:     Widen where SUT can be spent, and publish real payment volume and
+             merchant counts.
+
+ #22 [MEDIUM] "RWA" label without backing
+    Finding: SUT is described as a real-world-asset (RWA) project, but the
+             gold and Mongolian mine claims are unverified. The documentation
+             describes a payment and discount token.
+    Fix:     Back the label with audited assets and regular
+             proof-of-reserve reports, or stop using it.
+
+
+3. SUMMARY TABLE
+------------------------------------------------------------------------------
+  Severity    Count   Points
+  CRITICAL      5     #1 #2 #3 #5 #11   (legal, banking, delisting,
+                                         returns-style offers, crashes)
+  HIGH          9     #4 #6 #7 #8 #12 #13 #15 #16 #20
+  MEDIUM        7     #9 #10 #14 #17 #18 #21 #22
+  POSITIVE      1     #19
+  TOTAL        22
+
+
+4. ROOT CAUSE
+------------------------------------------------------------------------------
+Trust is falling mainly because of legal and financial practices, and gaps
+between what the project says and what can be verified. The technology is
+not the problem; the contract itself is now fairly clean.
+
+Biggest levers, in order:
+  1. Compliance: register properly, and stop returns-style offers.
+  2. Disclosure: publish the wallet map, one supply figure, and an
+     explanation of each crash.
+  3. Honesty: state the MSQUARE relationship and the advisors accurately.
+  4. Proof: an audit, a team KYC, locked liquidity, and real usage numbers.
+
+
+5. WHAT QA CAN OWN (before 2 Oct 2026)
+------------------------------------------------------------------------------
+  #6 / #18  Data correctness. Reconcile the supply figures and document the
+            correct numbers with on-chain evidence.
+  #19       Record the renounced ownership as a positive, with the
+            transaction link.
+  #20 / #21 Test the SUT dev app and MSQUARE dev flows, and report what
+            actually works (dev builds only).
+  #11       Check whether app and admin records match on-chain transactions
+            (a transparency control).
+
+  Everything else goes into the validation report under "What blocks the
+  thesis" and "Recommendations", stated factually with sources.
+
+
+SOURCES
+------------------------------------------------------------------------------
+  Full source list: docs/sut-coin-research-2026-09-29.txt (SOURCES section).
+  Key ones:
+    CoinMarketCap        https://coinmarketcap.com/currencies/supertrust/
+    CoinGecko            https://www.coingecko.com/en/coins/super-trust
+    Blockscout           https://polygon.blockscout.com/api/v2/tokens/0x98965474ecbec2f532f1f780ee37b0b05f77ca55
+    GoPlus               https://api.gopluslabs.io/api/v1/token_security/137?contract_addresses=0x98965474ecbec2f532f1f780ee37b0b05f77ca55
+    CertiK Skynet        https://skynet.certik.com/projects/supertrust
+    GOPAX review         https://resources.gopax.co.kr/crypto-details/review-report/Report_SUT.pdf
+    Bank freeze          https://www.digitalasset.works/news/articleView.html?idxno=27799
+    Criminal complaint   https://www.smartfn.co.kr/news/articleView.html?idxno=122684 (snippet only)
+    Chat-room case       http://www.fieldnews.kr/news/articleView.html?idxno=23368
+    Affiliate report     https://news.nate.com/view/20250108n32474
+    MSQUARE statement    https://supertrust.club/notice/4615/
+    Buyback notices      https://supertrust.club/notice/4043/ , /4060/ , /4098/

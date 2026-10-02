@@ -1,0 +1,211 @@
+:root {
+  color-scheme: light;
+  --surface-1: #fcfcfb;
+  --plane: #f9f9f7;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.1);
+
+  --series-1: #2a78d6; /* SUT / buy */
+  --series-2: #eb6834; /* BTC */
+  --series-3: #1baf7a; /* ETH */
+  --diverge-neg: #e34948; /* sell */
+  --diverge-mid: #f0efec;
+
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-1: #1a1a19;
+    --plane: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255, 255, 255, 0.1);
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --diverge-neg: #e66767;
+    --diverge-mid: #383835;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-1: #1a1a19;
+  --plane: #0d0d0d;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #898781;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgba(255, 255, 255, 0.1);
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --diverge-neg: #e66767;
+  --diverge-mid: #383835;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  background: var(--plane);
+  color: var(--text-primary);
+}
+
+.app { display: grid; grid-template-columns: 232px 1fr; min-height: 100vh; }
+
+/* Grid and flex items default to min-width:auto, so a wide child (a long table)
+   stretches its track past the viewport instead of letting .scroll engage.
+   Resetting min-width lets the intended internal scroller do its job. */
+.app > * { min-width: 0; }
+.main, .card, .grid2 > *, .tile, .scroll { min-width: 0; }
+.scroll { max-width: 100%; }
+
+.nav {
+  background: var(--surface-1);
+  border-right: 1px solid var(--border);
+  padding: 20px 12px;
+  display: flex; flex-direction: column; gap: 2px;
+  position: sticky; top: 0; height: 100vh;
+  /* the sidebar itself never scrolls: only .nav-scroll does, so the footer stays put */
+  overflow: hidden;
+}
+/* The only scroll region in the sidebar. min-height:0 lets a flex child shrink
+   below its content height, which is what allows it to scroll instead of
+   pushing the footer out of view. */
+.nav .nav-scroll {
+  flex: 1 1 auto; min-height: 0; overflow-y: auto; overflow-x: hidden;
+  display: flex; flex-direction: column; gap: 2px;
+  padding-bottom: 4px;
+}
+.nav h1 { font-size: 15px; margin: 0 0 4px 8px; letter-spacing: -0.01em; }
+.nav .case { font-size: 12px; color: var(--text-muted); margin: 0 0 16px 8px; }
+.nav button {
+  text-align: left; background: none; border: 0; padding: 8px 10px;
+  border-radius: 6px; cursor: pointer; color: var(--text-secondary);
+  font: inherit; font-size: 13px;
+}
+.nav button:hover { background: var(--plane); color: var(--text-primary); }
+.nav button[aria-current="true"] { background: var(--plane); color: var(--text-primary); font-weight: 600; }
+.nav .freeze {
+  flex: 0 0 auto; font-size: 11px; color: var(--text-muted);
+  border-top: 1px solid var(--border); padding-top: 12px; margin-top: 8px;
+}
+.nav .attribution {
+  margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
+  color: var(--text-secondary); font-size: 11px; font-weight: 600; letter-spacing: 0.01em;
+}
+
+.main { padding: 28px 32px 64px; max-width: 1180px; }
+.main > header { margin-bottom: 24px; }
+.main h2 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.015em; }
+.main .sub { color: var(--text-secondary); margin: 0; font-size: 13px; }
+
+.card {
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 18px; margin-bottom: 16px;
+}
+.card > h3 { font-size: 14px; margin: 0 0 2px; }
+.card > .hint { font-size: 12px; color: var(--text-muted); margin: 0 0 14px; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.tile .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+.tile .value { font-size: 24px; font-weight: 600; margin-top: 4px; letter-spacing: -0.02em; }
+.tile .value.na { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+.tile .meta { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600;
+  padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--plane); color: var(--text-secondary); white-space: nowrap;
+}
+.chip .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+
+.prov {
+  font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--border);
+  margin-top: 14px; padding-top: 10px; display: grid; gap: 3px;
+}
+.prov b { color: var(--text-secondary); font-weight: 600; }
+
+.warn {
+  background: color-mix(in srgb, var(--status-warning) 12%, var(--surface-1));
+  border: 1px solid color-mix(in srgb, var(--status-warning) 40%, var(--border));
+  border-radius: 8px; padding: 10px 12px; font-size: 12px; margin: 10px 0;
+  color: var(--text-primary);
+}
+.na-box {
+  border: 1px dashed var(--axis); border-radius: 8px; padding: 16px;
+  text-align: center; color: var(--text-muted); font-size: 12px; background: var(--plane);
+}
+.na-box b { display: block; color: var(--text-secondary); font-size: 12px; letter-spacing: 0.04em; margin-bottom: 4px; }
+
+/* Narrow key/value tables wrap inside their card rather than pushing the page
+   wider. Wide data tables opt back into natural width and scroll inside .scroll. */
+table { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
+.scroll table { table-layout: auto; width: max-content; min-width: 100%; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: anywhere; }
+th { color: var(--text-muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 3px; border-radius: 2px; display: inline-block; }
+.legend .axis-caption { margin-left: auto; color: var(--text-muted); font-size: 11px; }
+
+.toggle {
+  font: inherit; font-size: 12px; background: var(--plane); border: 1px solid var(--border);
+  border-radius: 6px; padding: 4px 10px; cursor: pointer; color: var(--text-secondary);
+}
+.toggle:hover { color: var(--text-primary); }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.between { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.muted { color: var(--text-muted); }
+.small { font-size: 12px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; }
+ul.tight { margin: 6px 0; padding-left: 18px; }
+ul.tight li { margin: 2px 0; font-size: 12px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 900px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .app { grid-template-columns: 1fr; }
+  /* stacked layout: the page scrolls, so the sidebar needs no inner scroller */
+  .nav { position: static; height: auto; overflow: visible; }
+  .nav .nav-scroll { overflow: visible; flex: 0 0 auto; }
+}
+
+.tooltip {
+  position: fixed; pointer-events: none; z-index: 50; background: var(--surface-1);
+  border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14); min-width: 150px;
+}
+.tooltip .t-date { font-weight: 600; margin-bottom: 4px; }
+.tooltip .t-row { display: flex; justify-content: space-between; gap: 14px; }
+.tooltip .t-row i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 5px; }
+
+.report-footer {
+  margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border);
+  font-size: 11px; color: var(--text-muted); display: grid; gap: 4px;
+}
+.report-footer .attribution-line {
+  color: var(--text-secondary); font-weight: 600; font-size: 12px;
+}
