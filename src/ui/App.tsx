@@ -12,6 +12,7 @@ import { ProposedThresholds } from './proposed-thresholds'
 import { ExperimentGuide } from './screens-guide'
 import { DailyMarketSync } from './screens-daily'
 import { ImprovementLab } from './improvement-lab'
+import { MarketQuality } from './market-quality'
 import { CASE } from '../data/measurements'
 import { LAYER_LABELS } from '../core/daily-assessment'
 
@@ -33,6 +34,7 @@ const SCREENS = [
   { id: 'guide', label: 'Experiment Guide' },
   { id: 'daily', label: 'Daily Market Sync', group: LAYER_LABELS.current },
   { id: 'lab', label: 'Value Improvement Lab' },
+  { id: 'market-quality', label: 'Market Quality (QA)', group: 'MARKET QUALITY' },
   { id: 'reports', label: 'Reports', group: 'REPORTING' },
   { id: 'settings', label: 'Settings' },
 ] as const
@@ -111,6 +113,7 @@ export default function App() {
         {screen === 'guide' && <ExperimentGuide />}
         {screen === 'daily' && <DailyMarketSync />}
         {screen === 'lab' && <ImprovementLab />}
+        {screen === 'market-quality' && <MarketQuality />}
         {screen === 'reports' && <Reports />}
         {screen === 'settings' && <Settings theme={theme} setTheme={setTheme} />}
       </main>

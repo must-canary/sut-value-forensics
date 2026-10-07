@@ -219,7 +219,12 @@ export async function sha256Hex(text: string): Promise<string | null> {
   }
 }
 
-function fingerprintRun(run: Omit<LiveSyncRun, 'fingerprint'>): string {
+/**
+ * Seal a run: the content fingerprint that `checkRunIntegrity` verifies against.
+ * Exported so a caller can construct a well-formed run (for example a test
+ * fixture or a QA resilience harness) without duplicating this algorithm.
+ */
+export function fingerprintRun(run: Omit<LiveSyncRun, 'fingerprint'>): string {
   let h = 0
   const raw = [
     run.id, run.startedAt, run.completedAt, run.trigger, run.status,

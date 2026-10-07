@@ -5,7 +5,8 @@ const SCREENS = [
   'Exchange & Liquidity', 'Hypothesis Lab', 'Evidence', 'Improvement Backlog',
   'Improvement Opportunities', 'Experiment Execution', 'Baseline Operations',
   'Proposed Thresholds', 'Pre-Registration', 'Baseline History',
-  'Experiment Guide', 'Daily Market Sync', 'Value Improvement Lab', 'Reports', 'Settings',
+  'Experiment Guide', 'Daily Market Sync', 'Value Improvement Lab',
+  'Market Quality (QA)', 'Reports', 'Settings',
 ] as const
 
 /** Fail a test on any console error or page exception. */
@@ -59,7 +60,7 @@ test('app launches with no console errors', async ({ page }) => {
   expect(errs, errs.join('\n')).toHaveLength(0)
 })
 
-test('navigation reaches all 9 screens without errors', async ({ page }) => {
+test('navigation reaches every screen without errors', async ({ page }) => {
   const errs = watchErrors(page)
   await page.goto('/')
   for (const s of SCREENS) {

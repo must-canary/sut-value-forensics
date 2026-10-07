@@ -5,7 +5,8 @@ const SCREENS = [
   'Exchange & Liquidity', 'Hypothesis Lab', 'Evidence', 'Improvement Backlog',
   'Improvement Opportunities', 'Experiment Execution', 'Baseline Operations',
   'Proposed Thresholds', 'Pre-Registration', 'Baseline History',
-  'Experiment Guide', 'Daily Market Sync', 'Value Improvement Lab', 'Reports', 'Settings',
+  'Experiment Guide', 'Daily Market Sync', 'Value Improvement Lab',
+  'Market Quality (QA)', 'Reports', 'Settings',
 ] as const
 
 const VIEWPORTS = [

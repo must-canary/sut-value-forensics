@@ -14,11 +14,13 @@ Last verified: **2026-10-07**. Status of the whole project: see [PROJECT-STATUS.
    capture. 41 evidence items, 29 of them first-party.
 5. **[SUT-VALUE-IMPROVEMENT-LAB.md](SUT-VALUE-IMPROVEMENT-LAB.md)** — how evidence becomes measurable
    improvement opportunities.
-6. **[IMPLEMENTATION-GUIDE.md](IMPLEMENTATION-GUIDE.md)** — architecture, modules, persistence, services.
-7. **[QA-VALIDATION-GUIDE.md](QA-VALIDATION-GUIDE.md)** — every check, how to run it, what it proves.
-8. **[WEEK-2-FINAL-REPORT.md](WEEK-2-FINAL-REPORT.md)** — what was delivered and verified this week.
-9. **[GIT-RELEASE-CHECKLIST.md](GIT-RELEASE-CHECKLIST.md)** — pre-commit verification and secret scan.
-10. **[THESIS-UPDATE-CANDIDATES.md](THESIS-UPDATE-CANDIDATES.md)** — proposed thesis changes. None applied.
+6. **[MARKET-QUALITY-QA.md](MARKET-QUALITY-QA.md)** — the Market Quality (QA) layer: what each of the six
+   QA dimensions validates, the status semantics, the regression methodology and what cannot be measured.
+7. **[IMPLEMENTATION-GUIDE.md](IMPLEMENTATION-GUIDE.md)** — architecture, modules, persistence, services.
+8. **[QA-VALIDATION-GUIDE.md](QA-VALIDATION-GUIDE.md)** — every check, how to run it, what it proves.
+9. **[WEEK-2-FINAL-REPORT.md](WEEK-2-FINAL-REPORT.md)** — what was delivered and verified this week.
+10. **[GIT-RELEASE-CHECKLIST.md](GIT-RELEASE-CHECKLIST.md)** — pre-commit verification and secret scan.
+11. **[THESIS-UPDATE-CANDIDATES.md](THESIS-UPDATE-CANDIDATES.md)** — proposed thesis changes. None applied.
 
 ## The frozen layer
 

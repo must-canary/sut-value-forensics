@@ -39,6 +39,7 @@ never performs an intervention, and never produces a measured result.
 | Governance gate | `THRESHOLDS_PENDING` |
 | EXP-002 (GAP-D public utility audit) | **COMPLETE 2026-10-07 — awaiting human review** |
 | GAP-D experiment-level status | **ON-CHAIN ACTIVITY OBSERVED, PRODUCT USAGE UNVERIFIED** |
+| Market Quality (QA) | **OPERATIONAL** — six dimensions, categorical status only, no numeric score |
 
 No liquidity improvement, adoption increase, price movement or Top-100 ranking change is claimed anywhere
 in this project. No SUT product usage, merchant payment or token value capture is claimed either — and
@@ -83,6 +84,7 @@ npm run daily-sync             # cron: 5 0 * * *  (00:05 UTC)
 | [docs/EXP-001-LIQUIDITY-MARKET-DEPTH.md](docs/EXP-001-LIQUIDITY-MARKET-DEPTH.md) | EXP-001: baseline, thresholds, gates |
 | [docs/EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md](docs/EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md) | EXP-002: GAP-D public utility and value-capture evidence audit |
 | [docs/SUT-VALUE-IMPROVEMENT-LAB.md](docs/SUT-VALUE-IMPROVEMENT-LAB.md) | Gaps, opportunities, next actions |
+| [docs/MARKET-QUALITY-QA.md](docs/MARKET-QUALITY-QA.md) | Market Quality (QA): six QA dimensions, status semantics, regression methodology |
 | [docs/WEEK-2-FINAL-REPORT.md](docs/WEEK-2-FINAL-REPORT.md) | What was delivered and verified in week 2 |
 | [docs/PROJECT-STATUS.md](docs/PROJECT-STATUS.md) | Live status of every layer and decision |
 | [docs/GIT-RELEASE-CHECKLIST.md](docs/GIT-RELEASE-CHECKLIST.md) | Pre-commit verification and secret scan |
@@ -103,6 +105,8 @@ Experiment Execution · Baseline Operations · Proposed Thresholds · Pre-Regist
 Experiment Guide
 
 **Current — SUT market state:** Daily Market Sync · Value Improvement Lab
+
+**Market quality — QA:** Market Quality (QA)
 
 **Reporting:** Reports · Settings
 

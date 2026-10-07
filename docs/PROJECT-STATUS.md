@@ -91,6 +91,36 @@ Added **2026-10-07**. Full report: [EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md]
 | Code changed | **None.** No file in `src/` or `test/` was modified; 575 tests still pass |
 | Effect on EXP-001 and the frozen layer | **NONE** |
 
+## Layer 5 — Market Quality (QA): OPERATIONAL
+
+Added **2026-10-07**. Full documentation: [MARKET-QUALITY-QA.md](MARKET-QUALITY-QA.md).
+
+A QA layer inside the product, not a separate one. It consumes the existing research, evidence, live-market
+and governance layers; it retrieves nothing, writes nothing and renders no button, input, select or
+textarea (all four counts asserted zero by a browser test).
+
+| Dimension | What it validates | Status with no stored sync |
+|---|---|---|
+| Transaction Integrity QA | Observed vs expected transaction, nine fields | **DATA UNAVAILABLE** — no expected-transaction context is connected |
+| Market Data QA | Availability, freshness, schema, provenance, completeness, duplicates, staleness, cross-source deviation | **DATA UNAVAILABLE** — becomes evaluable after a sync |
+| Liquidity Regression | Frozen EXP-001 baseline and previous sync vs current comparable observation | **DATA UNAVAILABLE** — the live sync does not compute EXP-001 price impact |
+| Resilience Testing | Failure scenarios against the real persistence and evidence functions | **PASS** — five scenarios execute for real; external ones report NOT EXECUTED |
+| Security QA | Identity, input validation, replay protection, evidence integrity, authorization boundary | **PASS** — five controls execute for real |
+| Evidence Validation | That every QA verdict can name its evidence; the frozen "state the reason" rule | **WARNING / PASS** by coverage |
+
+| Governance property | State |
+|---|---|
+| Thresholds proposed or registered by QA | **0 / 0** — QA detection margins are not business thresholds |
+| EXP-001 baseline | **UNCHANGED** — asserted byte-identical by test |
+| Frozen evidence layer and experiment registry | **UNCHANGED** — asserted byte-identical by test |
+| Frozen `EXP-002` ("Reproducible weekly active addresses") | **INTACT** — asserted by test |
+| Numeric quality score | **NOT IMPLEMENTED** — categorical status only, no approved scoring methodology exists |
+| `HEALTHY` reachable on partial coverage | **No** — any unevaluated dimension forces `DATA_INSUFFICIENT` |
+
+> **⚠ Open governance item carried forward.** The QA layer references the public utility audit by document
+> path, never by experiment id, because `EXP-002` is already held by the frozen in-code experiment. Neither
+> is renamed. See [MARKET-QUALITY-QA.md](MARKET-QUALITY-QA.md) §11.
+
 ## Improvement Lab
 
 | Opportunity | Status | Blocked by |
