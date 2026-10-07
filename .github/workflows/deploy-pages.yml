@@ -58,5 +58,43 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # GitHub Pages is still configured with the LEGACY branch publisher
+      # (build_type "legacy", source master:/). That means every push starts a
+      # second, competing publication which serves the repository root verbatim
+      # — including the Vite dev entry index.html, whose <script src="/src/main.tsx">
+      # a browser cannot execute. Whichever publication finishes last wins.
+      #
+      # On 2026-10-07 the legacy one finished last and took production blank,
+      # even though this workflow had succeeded. Until the Pages source is
+      # switched to GitHub Actions (Settings -> Pages -> Build and deployment ->
+      # Source -> GitHub Actions), wait for the legacy build OF THIS COMMIT to
+      # finish, so the artifact built above is always published last.
+      #
+      # This step never fails the deployment: if the legacy builder cannot be
+      # observed it simply stops waiting and proceeds.
+      - name: Wait for the legacy Pages builder to finish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 40); do
+            json=$(gh api "repos/${GITHUB_REPOSITORY}/pages/builds/latest" 2>/dev/null || echo '{}')
+            status=$(echo "$json" | jq -r '.status // "unknown"')
+            commit=$(echo "$json" | jq -r '.commit // ""')
+            echo "attempt $i: legacy build status=$status commit=${commit:0:8} (this commit ${GITHUB_SHA:0:8})"
+            if [ "$status" = "unknown" ]; then
+              echo "legacy builder not observable — proceeding"
+              break
+            fi
+            # Done only when the legacy build for THIS commit has settled.
+            if [ "$commit" = "$GITHUB_SHA" ] && [ "$status" != "building" ] && [ "$status" != "queued" ]; then
+              echo "legacy build for this commit has settled ($status)"
+              break
+            fi
+            sleep 15
+          done
+          # Small settle margin so the legacy publication is fully in place
+          # before this workflow overwrites it with the real build output.
+          sleep 10
+
       - id: deployment
         uses: actions/deploy-pages@v4
