@@ -1,0 +1,225 @@
+{
+ "endpoint": "https://api.msq.market/super-save/public/dect-transaction-details/",
+ "purpose": "instrument sensitivity check \u2014 can the public DeCT endpoint return a positive for any observed on-chain transaction?",
+ "assetTested": "USDT (0xc2132d05...) transactions involving 0xaaa4d5dd26eb1a2afe5fd5fb529fc24cee89cc2c",
+ "window": {
+  "fromBlock": 95056696,
+  "toBlock": 95096695
+ },
+ "txTested": 26,
+ "httpCounts": {
+  "404": 26
+ },
+ "matched": 0,
+ "results": [
+  {
+   "tx": "0x0723bfcf291c919743a2d14b26f83b25e59d16c8e1629041bb8133344c550cc2",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x0a7f6bce313882eec132de9b441344c50d33cd19bbf29cb31f03b93ff6e28cfb",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x11ab09d39b9b5daf99dd0e601fea965b53714c8e0230aa46640c0ed7dfe4ed56",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x25b1b5fa05205d6840802a064a91429cea0389bfd392081e6bb714181cf2a40a",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x283ce71dfb6f7e2491959893e0762ae5a9b758c65d93ed288be3ab72e89f963e",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x2ceaaafe4774a414ad7de06308f0ad0acac434f5e51ce61e765b34eaa71716ef",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x4fe7122e90d258e906baec5738b4aaae443c246663bde645659838dd53caf110",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x548ea93244c8d5f7d83abf05e477db7de1cc6a21c293760adac5e2e521c6bf25",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x5801e7e7dba63369ea26a7732bb76c056c9c40e63999caf57ab1c3fb17d40e45",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x5ada8a42f9682832de8e54516b0f26f22d0eaf24353759c615c9c0abb7725495",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x76208b4d4f38f8323ec7eadbcd65f8f87aab161c31697ebe7da9ad620f0688b7",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x822a2605908a6700f615762b813608b3efbe69ba7561d40e3e1ea5dc17f59435",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x823ed0259b9cea27718e4d59d1e9593e3a2bc4eea6023502005603066a142806",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0x903468a4cfd2a47f0078a98f5eb782f4d4c35b463fe60b1f57bd766036cbb166",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xa416b3ed3f87dc98fcae6827535ef947e9608e3fe16b020ec4de8850506fc11d",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xae90f6bf08704debdf6a5effa523ef8b01e2dc65a8bbdaaa3d991e8fe87abbe7",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xb84f7b3a142d0381fc7c53d29648958ef423ff47cf15ff3d9125df5fd6b73c0d",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xbb6ec5683ed97566aa980c2f0c4b579844c9577e7f53e942ee6a4fa246942fe3",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xbc616487f1bdb93ee9a36d67824ab55bd762afeb71b58fe33f6e352ba66c3b7a",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xca369029f655d3e5db781b549dbdcbcb94beb08d532a524ad9b8faf3303eab34",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xd662b91896f09fac37cf5322e995a9416392d5eabcfc593a9336b682cd01af35",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xdd646ab1a66b193263123ea37baea8f4e0da814d8fe71cf4d0a6348d8142446c",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xe3b8b8b2c2da501fae14b828071e5d5fef3e1027ccd98c19f95dc266e297276b",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xe4bb94d0e9ec8e5f955f7f8cbcd656e267bd28e8016ba515e6d1d5ac9ea677f7",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xf50da82da01d86df990c62e1300d276a5e7c506c90c6d55cffb1943d68ac8d97",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  },
+  {
+   "tx": "0xf7e497626bef2c0a868af5a13158ef95bd851566f958bea17b74fe51bbf03e90",
+   "http": 404,
+   "body": {
+    "success": false,
+    "message": "Transaction not found"
+   }
+  }
+ ],
+ "retrievedAt": "2026-10-07T05:34:04Z"
+}

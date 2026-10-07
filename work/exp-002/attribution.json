@@ -1,0 +1,38 @@
+{
+ "source": "Blockscout polygon.blockscout.com/api/v2/addresses",
+ "retrievedAt": "2026-10-07T05:28:01Z",
+ "addresses": [
+  {
+   "address": "0xaaa4d5dd26eb1a2afe5fd5fb529fc24cee89cc2c",
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "address": "0x092295c92bab5e734c4a60dbc0f0ffdcdfc4e165",
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "address": "0x3d90f66b534dd8482b181e24655a9e8265316be9",
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "address": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "address": "0x278d858f05b94576c1e6f73285886876ff6ef8d2",
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "address": "0x41d8e95a5d41390627b07cd22e800cb99b1a8e90",
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "address": "0x0186f74b30043e6241c5777e183d47c1e6605ad9",
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "address": "0x4e5bc1cd2c421ecfef65395b3237f90a97178c55",
+   "error": "HTTP Error 403: Forbidden"
+  }
+ ]
+}

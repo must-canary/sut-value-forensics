@@ -1,6 +1,6 @@
 # Documentation index
 
-Last verified: **2026-10-02**. Status of the whole project: see [PROJECT-STATUS.md](PROJECT-STATUS.md).
+Last verified: **2026-10-07**. Status of the whole project: see [PROJECT-STATUS.md](PROJECT-STATUS.md).
 
 ## Reading order
 
@@ -9,13 +9,16 @@ Last verified: **2026-10-02**. Status of the whole project: see [PROJECT-STATUS.
    business decision.
 3. **[EXP-001-LIQUIDITY-MARKET-DEPTH.md](EXP-001-LIQUIDITY-MARKET-DEPTH.md)** — the experiment itself:
    captured baseline, proposed thresholds, governance gates.
-4. **[SUT-VALUE-IMPROVEMENT-LAB.md](SUT-VALUE-IMPROVEMENT-LAB.md)** — how evidence becomes measurable
+4. **[EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md](EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md)** — the
+   GAP-D public-evidence audit: what public sources can and cannot prove about SUT utility and token value
+   capture. 41 evidence items, 29 of them first-party.
+5. **[SUT-VALUE-IMPROVEMENT-LAB.md](SUT-VALUE-IMPROVEMENT-LAB.md)** — how evidence becomes measurable
    improvement opportunities.
-5. **[IMPLEMENTATION-GUIDE.md](IMPLEMENTATION-GUIDE.md)** — architecture, modules, persistence, services.
-6. **[QA-VALIDATION-GUIDE.md](QA-VALIDATION-GUIDE.md)** — every check, how to run it, what it proves.
-7. **[WEEK-2-FINAL-REPORT.md](WEEK-2-FINAL-REPORT.md)** — what was delivered and verified this week.
-8. **[GIT-RELEASE-CHECKLIST.md](GIT-RELEASE-CHECKLIST.md)** — pre-commit verification and secret scan.
-9. **[THESIS-UPDATE-CANDIDATES.md](THESIS-UPDATE-CANDIDATES.md)** — proposed thesis changes. None applied.
+6. **[IMPLEMENTATION-GUIDE.md](IMPLEMENTATION-GUIDE.md)** — architecture, modules, persistence, services.
+7. **[QA-VALIDATION-GUIDE.md](QA-VALIDATION-GUIDE.md)** — every check, how to run it, what it proves.
+8. **[WEEK-2-FINAL-REPORT.md](WEEK-2-FINAL-REPORT.md)** — what was delivered and verified this week.
+9. **[GIT-RELEASE-CHECKLIST.md](GIT-RELEASE-CHECKLIST.md)** — pre-commit verification and secret scan.
+10. **[THESIS-UPDATE-CANDIDATES.md](THESIS-UPDATE-CANDIDATES.md)** — proposed thesis changes. None applied.
 
 ## The frozen layer
 

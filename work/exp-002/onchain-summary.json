@@ -1,0 +1,233 @@
+{
+ "topAddresses": [
+  {
+   "address": "0xaaa4d5dd26eb1a2afe5fd5fb529fc24cee89cc2c",
+   "legs": 185,
+   "outLegs": 0,
+   "inLegs": 185,
+   "outSut": 0,
+   "inSut": 31088.0,
+   "attribution": "SRC (frozen research: top-10 holder #4, unlabelled EOA)"
+  },
+  {
+   "address": "0x092295c92bab5e734c4a60dbc0f0ffdcdfc4e165",
+   "legs": 99,
+   "outLegs": 48,
+   "inLegs": 51,
+   "outSut": 22179.883640320648,
+   "inSut": 24631.882171326077,
+   "attribution": "Uniswap V3 SUT/USDT 1% pool (contract-verified)"
+  },
+  {
+   "address": "0x3d90f66b534dd8482b181e24655a9e8265316be9",
+   "legs": 74,
+   "outLegs": 37,
+   "inLegs": 37,
+   "outSut": 13661.827565924948,
+   "inSut": 13661.827565924948,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "legs": 32,
+   "outLegs": 26,
+   "inLegs": 6,
+   "outSut": 13388.605699999998,
+   "inSut": 5938.722856445763,
+   "attribution": "FUNDER2 (frozen research)"
+  },
+  {
+   "address": "0x278d858f05b94576c1e6f73285886876ff6ef8d2",
+   "legs": 32,
+   "outLegs": 31,
+   "inLegs": 1,
+   "outSut": 3318.3101476941747,
+   "inSut": 7082.208372027584,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x41d8e95a5d41390627b07cd22e800cb99b1a8e90",
+   "legs": 18,
+   "outLegs": 9,
+   "inLegs": 9,
+   "outSut": 18666.74538763041,
+   "inSut": 18666.74538763041,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x0186f74b30043e6241c5777e183d47c1e6605ad9",
+   "legs": 14,
+   "outLegs": 7,
+   "inLegs": 7,
+   "outSut": 1490.7294,
+   "inSut": 1490.7294,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x4e5bc1cd2c421ecfef65395b3237f90a97178c55",
+   "legs": 12,
+   "outLegs": 0,
+   "inLegs": 12,
+   "outSut": 0,
+   "inSut": 2500.6754,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0xc30a437a94ec6c98be0abbd2ff2f6b29a7abe1d9",
+   "legs": 10,
+   "outLegs": 5,
+   "inLegs": 5,
+   "outSut": 1009.946,
+   "inSut": 1009.946,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x03f115b015b210f812829ea076a7643ac80c2c97",
+   "legs": 10,
+   "outLegs": 5,
+   "inLegs": 5,
+   "outSut": 212.3489974739388,
+   "inSut": 212.3489974739388,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x73691cee20db22f55a6fd0d5948ab00e0fb973b1",
+   "legs": 9,
+   "outLegs": 0,
+   "inLegs": 9,
+   "outSut": 0,
+   "inSut": 132.344336065874,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0xc8f7787d062a91a5367dde72b35eeb5da807102d",
+   "legs": 8,
+   "outLegs": 6,
+   "inLegs": 2,
+   "outSut": 4315.044293319999,
+   "inSut": 3433.3031338897167,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x03183574d20a5e870b0a60a1d005370b30a95dad",
+   "legs": 5,
+   "outLegs": 3,
+   "inLegs": 2,
+   "outSut": 371.0,
+   "inSut": 371.0,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0xb337e2877702ccd49909d7e5e81eb5a79f08da58",
+   "legs": 5,
+   "outLegs": 1,
+   "inLegs": 4,
+   "outSut": 196.0,
+   "inSut": 99.02938227091438,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x3cc89a76370b3933b5cf57c0bcf129bc33c0e94d",
+   "legs": 5,
+   "outLegs": 4,
+   "inLegs": 1,
+   "outSut": 221.0,
+   "inSut": 190.0,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x59ed978b30a562fd439d95541c908d87b0916047",
+   "legs": 5,
+   "outLegs": 4,
+   "inLegs": 1,
+   "outSut": 700000.0,
+   "inSut": 700000.0,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0xb4acbc082b5e7ded571c98ee4257778a9d784b36",
+   "legs": 4,
+   "outLegs": 3,
+   "inLegs": 1,
+   "outSut": 0.6762924582661461,
+   "inSut": 0.6762924582661463,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0xdedfe39978f7a59f4cf26f5c1e2f3ba39e5bb2fd",
+   "legs": 4,
+   "outLegs": 3,
+   "inLegs": 1,
+   "outSut": 2922.0,
+   "inSut": 2883.297128116395,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x6384529ec08e85160b9701e720f2b4eda1200791",
+   "legs": 4,
+   "outLegs": 3,
+   "inLegs": 1,
+   "outSut": 3008.0,
+   "inSut": 1003.0040722607704,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x65749efb9a319fea4a568eef98f9f06339296fcd",
+   "legs": 4,
+   "outLegs": 2,
+   "inLegs": 2,
+   "outSut": 196.0,
+   "inSut": 196.0,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x07964f135f276412b3182a3b2407b8dd45000000",
+   "legs": 4,
+   "outLegs": 2,
+   "inLegs": 2,
+   "outSut": 1176.46,
+   "inSut": 1180.0,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0x94fa01d02ef00a1cfb19cd1df967cec5a439fc42",
+   "legs": 4,
+   "outLegs": 1,
+   "inLegs": 3,
+   "outSut": 0.0,
+   "inSut": 5733.402145800091,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0xed055568655a1be46a5d5978c507a5ea0dadddd7",
+   "legs": 3,
+   "outLegs": 1,
+   "inLegs": 2,
+   "outSut": 295.835,
+   "inSut": 887.708,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0xb436b8cdc798f9e3ecfaff41ebfd915b5137529f",
+   "legs": 3,
+   "outLegs": 2,
+   "inLegs": 1,
+   "outSut": 500.0,
+   "inSut": 1322.0,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  },
+  {
+   "address": "0xf8b4502436d2f4db3cef035d52971b50bee07bbc",
+   "legs": 3,
+   "outLegs": 2,
+   "inLegs": 1,
+   "outSut": 224.0,
+   "inSut": 299.854,
+   "attribution": "UNKNOWN \u2014 ownership unverified"
+  }
+ ],
+ "poolOutLegs": 48,
+ "poolInLegs": 51,
+ "legsNotTouchingPool": 374,
+ "grossSutMoved": 1597936.7845805988
+}

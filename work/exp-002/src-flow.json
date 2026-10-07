@@ -1,0 +1,25 @@
+{
+ "address": "0xaaa4d5dd26eb1a2afe5fd5fb529fc24cee89cc2c",
+ "window": {
+  "fromBlock": 95056696,
+  "toBlock": 95096695,
+  "fromBlockTime": "2026-10-06T12:36:37Z",
+  "toBlockTime": "2026-10-07T05:17:08Z"
+ },
+ "sutInLegs": 185,
+ "sutInDistinctSenders": 165,
+ "sutInTotal": 31088.0,
+ "sutOutLegs": 0,
+ "usdtOutLegs": 1,
+ "usdtOutTotal": 37000.0,
+ "usdtOutDistinct": 1,
+ "usdtInLegs": 25,
+ "usdtInTotal": 4370.000037,
+ "sutSenderAlsoPaidUsdtBySrc": 0,
+ "senderBuckets": {
+  "100-999": 64,
+  "10-99": 97,
+  "1000-9999": 4
+ },
+ "retrievedAt": "2026-10-07T05:27:14Z"
+}

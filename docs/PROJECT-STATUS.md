@@ -62,6 +62,35 @@ No feature, screen, service or test writes to this layer. Verified by byte-ident
 | $50,000 buy | ≤ 40% | **PROPOSED — PENDING BUSINESS APPROVAL** |
 | $50,000 sell | ≤ 30% | **PROPOSED — PENDING BUSINESS APPROVAL** |
 
+## Layer 4 — EXP-002 public utility & value-capture audit: COMPLETE, AWAITING HUMAN REVIEW
+
+Added **2026-10-07**. Full report: [EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md](EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md).
+
+> **⚠ Identifier collision — open governance item.** `EXP-002` is already used in the frozen code layer for a
+> different experiment: *“Reproducible weekly active addresses”* (`OPP-02`, stage `PLANNED`, captures
+> `WEEK-2026-W39`, shown on **Baseline Operations**). Two distinct experiments now share one ID. Neither was
+> renumbered: the in-code one is frozen, and renaming the audit is a human decision. Recommended
+> reconciliation is to renumber **the audit** (e.g. to `EXP-003`) on approval. The two are related — the
+> frozen experiment lists *“Payment-associated transfers — DATA UNAVAILABLE until merchant addresses are
+> published”* as its own KPI, and the audit confirmed that condition still holds.
+
+| Item | State |
+|---|---|
+| Gap addressed | GAP-D — utility / token value-capture measurement |
+| Evidence items | **41** — 29 Level-1 first-party, 10 Level-2 blockchain, 2 Level-3 third-party |
+| Official utility claims inventoried | **14**, each with exact wording, URL and date |
+| On-chain window measured | blocks 95,056,696–95,096,695 · 2026-10-06T12:36:37Z → 2026-10-07T05:17:08Z |
+| On-chain activity | **473 transfer legs · 399 transactions · 251 distinct senders** |
+| Transaction → product linkage | **0 of 399** resolved against the only first-party public verification endpoint |
+| Address attribution | **0** addresses publicly attributed to any product, merchant, company or exchange |
+| Value-capture measurement | **DATA UNAVAILABLE** — no indicator computable from public evidence |
+| **GAP-D experiment-level status** | **C — ON-CHAIN ACTIVITY OBSERVED, PRODUCT USAGE UNVERIFIED** |
+| GAP-D in-code lab status | **`DATA UNAVAILABLE`** — unchanged, pending human review |
+| Thresholds proposed / registered | **0 / 0** |
+| Human review | **REQUIRED — NOT RECORDED** |
+| Code changed | **None.** No file in `src/` or `test/` was modified; 575 tests still pass |
+| Effect on EXP-001 and the frozen layer | **NONE** |
+
 ## Improvement Lab
 
 | Opportunity | Status | Blocked by |
@@ -69,7 +98,11 @@ No feature, screen, service or test writes to this layer. Verified by byte-ident
 | OPP-L1 Liquidity / market depth | BUSINESS REVIEW REQUIRED | Business decision |
 | OPP-L2 Market transparency / data coverage | PROPOSED | Nothing — QA can proceed |
 | OPP-L3 Exchange / market access evidence | DATA INSUFFICIENT | Nothing — QA can proceed |
-| OPP-L4 Utility / value-capture measurement | DATA UNAVAILABLE | Nothing — QA can proceed |
+| OPP-L4 Utility / value-capture measurement | DATA UNAVAILABLE (in code) · **EXP-002 evidence collected** | Nothing — QA can proceed |
+
+OPP-L4's next action is revised by EXP-002: the binding constraint is not a missing product but a missing
+verifiable link between on-chain activity and product usage. All eleven EXP-002 evidence gaps are
+unanswerable from public sources and answerable from approved internal telemetry. See the report's §19.
 
 ## Explicit non-claims
 
@@ -80,6 +113,9 @@ No feature, screen, service or test writes to this layer. Verified by byte-ident
 - **No adoption improvement** is claimed.
 - **No Top-100 ranking improvement** is claimed.
 - No price prediction of any kind is made.
+- **No SUT product usage, merchant payment or token value capture is claimed.** EXP-002 established measured
+  on-chain activity and inventoried utility claims; it established no product usage. Equally, it does **not**
+  claim that SUT has no utility or that no SUT payments occur — unverified means unverified.
 
 ## Test state
 

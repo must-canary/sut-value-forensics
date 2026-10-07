@@ -48,11 +48,24 @@ deteriorating can be supported.
 
 ## Candidate 4 — Nothing about adoption, utility or value capture
 
-**Explicitly NOT a candidate.** H7 (weak organic utility/adoption) is INCONCLUSIVE and H8 (weak token value
-capture) is DATA_UNAVAILABLE in the frozen research. No product telemetry is connected to this project, so
-there is no observation to add.
+**Still NOT a candidate for a thesis edit.** H7 (weak organic utility/adoption) is INCONCLUSIVE and H8 (weak
+token value capture) is DATA_UNAVAILABLE in the frozen research. No product telemetry is connected to this
+project.
 
-**Status:** BLOCKED — DATA UNAVAILABLE pending a real telemetry source (lab opportunity OPP-L4).
+**Updated 2026-10-07 by EXP-002.** The public-evidence position has changed even though the thesis position
+has not. [EXP-002](EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md) collected 41 evidence items and established:
+14 dated first-party utility claims; real measured mainnet SUT activity (473 transfer legs / 399
+transactions / 251 distinct senders in 16 h 40 m); **0 of 399** transactions resolvable to a product record
+against the only first-party public verification endpoint; and **no** publicly attributable merchant,
+product, company or exchange address.
+
+This is new evidence bearing on H7 and H8, and it is **consistent** with both of their existing statuses. It
+does **not** meet the bar to re-status a frozen hypothesis, for two reasons recorded in the report: product
+usage may be occurring privately and invisibly to a public audit (§16.4), and the sensitivity of the linkage
+instrument could not be established, so the central negative is bounded rather than conclusive (§12.3).
+
+**Status:** BLOCKED for a thesis edit — DATA UNAVAILABLE pending a real telemetry source (lab opportunity
+OPP-L4). **Evidence advanced**, hypothesis statuses unchanged.
 
 ## Candidate 5 — Nothing about market ranking
 
@@ -79,7 +92,7 @@ satisfied.
 | 1 | Measurement capability exists | PROPOSED — optional, no conclusion changes |
 | 2 | Market-data coverage gap | PROPOSED — optional, no conclusion changes |
 | 3 | Liquidity change | BLOCKED — no time-aligned evidence can exist |
-| 4 | Adoption / utility / value capture | BLOCKED — no telemetry source |
+| 4 | Adoption / utility / value capture | BLOCKED — no telemetry source · **EXP-002 evidence advanced, statuses unchanged** |
 | 5 | Market ranking | OUT OF SCOPE |
 | 6 | EXP-001 result | BLOCKED — no measurement, no review |
 

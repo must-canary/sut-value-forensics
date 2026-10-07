@@ -49,6 +49,21 @@ assumed in its absence. No utility, company, exchange or user activity is fabric
 
 OPP-L2, OPP-L3 and OPP-L4 require **no business approval** to progress.
 
+### OPP-L4 progressed — EXP-002, 2026-10-07
+
+The tables above are read from `src/core/improvement-lab.ts` and state what the **code** reports. The code
+is unchanged, so GAP-D and OPP-L4 still report the literal `DATA UNAVAILABLE`. That is deliberate: a
+code-derived status may only move after a named human accepts a finding.
+
+Separately, OPP-L4's next action — *"identify measurable product telemetry connecting real product usage
+with SUT-related activity"* — was acted on by
+[EXP-002](EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md), a public-evidence audit run because company-side
+telemetry is unavailable. It collected 41 evidence items and reached an experiment-level status of
+**C — ON-CHAIN ACTIVITY OBSERVED, PRODUCT USAGE UNVERIFIED**: mainnet SUT activity is real and measured,
+while **0 of 399** transactions could be linked to a product record. EXP-002 identified the telemetry OPP-L4
+was asking for — it is internal, and named in the report's §19. No lab status, threshold or gate was changed
+by it.
+
 ## 4. Experiment view
 
 Shows the observed baseline labelled **"Observed baseline — not a target."**, `$100,000` as

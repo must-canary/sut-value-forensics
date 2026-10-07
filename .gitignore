@@ -43,5 +43,12 @@ work/daily-market-store.json
 !work/pool_SELLS_PROCEEDS.json
 !work/c1_result.json
 
+# EXP-002 follows the same policy: the audit SCRIPTS and the computed evidence
+# artefacts are committed (~245 KB) because docs/EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md
+# cites them as the provenance of every number it reports. The raw retrieval
+# cache under work/exp-002/raw/ is not: it is ~3.6 MB of served HTML, fully
+# regenerable by re-running the scripts, and no source file or test reads it.
+work/exp-002/raw/
+
 # Archives (the research handoff ships as loose files; the zip duplicates them)
 *.zip

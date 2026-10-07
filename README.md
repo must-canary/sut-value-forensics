@@ -37,11 +37,15 @@ never performs an intervention, and never produces a measured result.
 | Post-intervention measurement | **DATA UNAVAILABLE** |
 | Measured result | **DATA UNAVAILABLE / NOT DETERMINED** |
 | Governance gate | `THRESHOLDS_PENDING` |
+| EXP-002 (GAP-D public utility audit) | **COMPLETE 2026-10-07 — awaiting human review** |
+| GAP-D experiment-level status | **ON-CHAIN ACTIVITY OBSERVED, PRODUCT USAGE UNVERIFIED** |
 
 No liquidity improvement, adoption increase, price movement or Top-100 ranking change is claimed anywhere
-in this project.
+in this project. No SUT product usage, merchant payment or token value capture is claimed either — and
+equally, it is not claimed that SUT has no utility. EXP-002 reports what public evidence can and cannot
+prove, and nothing beyond it.
 
-## Verified test state (2026-10-02)
+## Verified test state (2026-10-07)
 
 ```
 npm test             575 passed (19 files)
@@ -76,7 +80,8 @@ npm run daily-sync             # cron: 5 0 * * *  (00:05 UTC)
 | [docs/README.md](docs/README.md) | Documentation index and reading order |
 | [docs/IMPLEMENTATION-GUIDE.md](docs/IMPLEMENTATION-GUIDE.md) | Architecture, modules, data flow, persistence |
 | [docs/QA-VALIDATION-GUIDE.md](docs/QA-VALIDATION-GUIDE.md) | How to run and interpret every check |
-| [docs/EXP-001-LIQUIDITY-MARKET-DEPTH.md](docs/EXP-001-LIQUIDITY-MARKET-DEPTH.md) | The experiment: baseline, thresholds, gates |
+| [docs/EXP-001-LIQUIDITY-MARKET-DEPTH.md](docs/EXP-001-LIQUIDITY-MARKET-DEPTH.md) | EXP-001: baseline, thresholds, gates |
+| [docs/EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md](docs/EXP-002-PUBLIC-SUT-UTILITY-VALUE-CAPTURE.md) | EXP-002: GAP-D public utility and value-capture evidence audit |
 | [docs/SUT-VALUE-IMPROVEMENT-LAB.md](docs/SUT-VALUE-IMPROVEMENT-LAB.md) | Gaps, opportunities, next actions |
 | [docs/WEEK-2-FINAL-REPORT.md](docs/WEEK-2-FINAL-REPORT.md) | What was delivered and verified in week 2 |
 | [docs/PROJECT-STATUS.md](docs/PROJECT-STATUS.md) | Live status of every layer and decision |
