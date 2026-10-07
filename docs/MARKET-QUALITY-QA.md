@@ -40,8 +40,11 @@ It is **not a separate product** and not a second data pipeline. It consumes wha
 The module performs **no retrieval of its own**. A second ingestion path would create a second version of
 the truth, which is the very thing this layer exists to detect.
 
-It also renders **no button, input, select or textarea** — a browser test asserts all four counts are zero,
-so it is structurally incapable of approving, registering or executing anything.
+Its only controls are **disclosures**: accordion headers, "View details" links and status filters. Every
+button in the module declares itself with `data-qa-disclosure`, and a browser test asserts that *every*
+button on the page carries that marker and that there is **no input, select, textarea or form at all**. So
+the module remains structurally incapable of approving, registering or executing anything — it can reveal
+information, and nothing else.
 
 ## 3. What each dimension validates
 
@@ -224,14 +227,57 @@ renamed, merged or overwritten. The collision is surfaced in the Transaction Int
 `EXPERIMENT_ID_COLLISION`. Renumbering the audit (for example to `EXP-003`) is a **governance decision for a
 named human** — the in-code experiment is older and is referenced by frozen captures, UI and tests.
 
-## 12. Verification
+## 12. Reading the dashboard
+
+The page is ordered so the status can be read before the evidence, and refined
+**2026-10-07** from a single long report into a five-level dashboard:
+
+| Level | What it shows | Where |
+|---|---|---|
+| 1 | Overall QA status and its reason | hero, top of page |
+| 2 | Six dimensions: status, scope, one-line result, check count | status grid + metrics strip |
+| 3 | Open findings only, plus the governance item | Key QA findings |
+| 4 | Full per-dimension detail | collapsed accordions |
+| 5 | Evidence, provenance and traceability | inside level 4, plus the evidence filter |
+
+Three rules hold the hierarchy together:
+
+- **No evidence table is visible before the reader asks for one.** Detail sections are
+  collapsed by default.
+- **Collapsing defers, it never deletes.** A collapsed panel stays in the DOM with its
+  `hidden` attribute set, so every check, reason and evidence reference is still present
+  and still findable by a text search. A browser test asserts this.
+- **Scope is always attached to a status.** "Security QA — PASS" carries
+  *Repository-level controls* beneath it, on both the card and the accordion header, so a
+  passing dimension can never be read as a claim about the whole SUT ecosystem.
+
+Every value on the dashboard is bound to the engine's own output. The one-line result on
+a card prefers the first specific check reason over the generic rollup text, because
+*"No live market sync run is stored."* tells the reader more than *"no evaluable data is
+available"* — but both come from the engine; only the choice between them is presentational.
+
+### Accessibility
+
+Accordion headers are real `<button>` elements inside `<h3>`, carrying `aria-expanded` and
+`aria-controls`; each panel is a `role="region"` labelled by its own header. The whole page
+is operable by keyboard, focus outlines are preserved on every disclosure control, and
+status is always conveyed by text as well as colour. `DATA UNAVAILABLE` and `NOT EXECUTED`
+use the neutral tone and are asserted to differ from the pass treatment.
+
+### What the refinement did not change
+
+The QA engine. `src/core/market-quality/` has a zero diff across this change: the
+refinement is presentation only, calls the engine exactly once per ledger/governance change,
+and performs no retrieval, no recomputation and no write.
+
+## 13. Verification
 
 ```
 npm run typecheck    0 errors
 npm test             654 passed (20 files) — 79 new Market Quality tests
 npm run smoke        32/32 checks passed
 npm run build        success
-npx playwright test  247 passed (19 files) — 22 new Market Quality browser tests
+npx playwright test  274 passed (19 files) — 49 Market Quality browser tests
 ```
 
 Governance regression tests assert, after the module runs, that: the EXP-001 baseline captures are

@@ -211,65 +211,193 @@ ul.tight li { margin: 2px 0; font-size: 12px; }
 }
 
 /* ─────────────────────────────── Market Quality (QA)
-   Reuses the existing tokens, card chrome and .scroll table behaviour. The only
-   new primitives are the dimension grid, the key/value evidence rows and the
-   collapsible evidence disclosure — each responsive without a new breakpoint
-   system: auto-fit handles desktop 3-up, tablet 2-up and mobile 1-up. */
+   A dashboard layer over the existing card chrome. Only the existing tokens are
+   used: no new colour is introduced, and DATA UNAVAILABLE / NOT EXECUTED are
+   rendered in the muted/neutral tone so they can never read as a failure.
+   Responsiveness comes from auto-fit grids rather than a new breakpoint system:
+   3-up on desktop, 2-up on tablet, 1-up on mobile. */
 
-.qa-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(236px, 1fr));
-  gap: 12px; margin-bottom: 16px;
-}
-.qa-dim {
-  border: 1px solid var(--border); border-radius: 10px; padding: 12px;
-  background: var(--plane); display: flex; flex-direction: column; gap: 6px; min-width: 0;
-}
-.qa-dim-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
-.qa-dim-title { font-weight: 600; font-size: 13px; }
-.qa-dim-purpose { font-size: 11px; color: var(--text-muted); margin: 0; line-height: 1.45; }
-.qa-dim-reason { font-size: 11px; color: var(--text-secondary); margin: 0; line-height: 1.45; }
-.qa-dim-meta { font-size: 10px; color: var(--text-muted); margin-top: auto; padding-top: 4px; }
-
-.qa-overall {
-  border: 1px solid var(--border); border-radius: 10px; padding: 12px;
-  background: var(--surface-1); margin-bottom: 16px; display: grid; gap: 8px;
-}
-.qa-overall .label {
+/* level 1 — overall status */
+.qa-hero { display: grid; gap: 8px; }
+.qa-hero-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.qa-hero-label {
   font-size: 10px; letter-spacing: 0.08em; font-weight: 700;
   text-transform: uppercase; color: var(--text-muted);
 }
-.qa-overall-value { margin-top: 4px; }
+.qa-hero-status { margin-top: 6px; }
+.qa-hero-status .chip { font-size: 13px; padding: 4px 10px; }
+.qa-hero-reason { margin: 0; font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
 
-.qa-dim-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+/* level 2 — six dimension cards: 3 x 2 on desktop, 2 on tablet, 1 on mobile */
+.qa-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+  gap: 12px; margin-bottom: 16px;
+}
+.qa-dim {
+  border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px;
+  background: var(--surface-1); display: flex; flex-direction: column; gap: 4px; min-width: 0;
+}
+.qa-dim-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.qa-dim-title { font-weight: 600; font-size: 13px; }
+.qa-dim-scope { font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+.qa-dim-line { font-size: 12px; color: var(--text-secondary); margin: 4px 0 0; line-height: 1.45; }
+.qa-dim-foot {
+  margin-top: auto; padding-top: 10px; display: flex; align-items: center;
+  justify-content: space-between; gap: 8px; flex-wrap: wrap;
+}
+.qa-dim-count { font-size: 11px; color: var(--text-muted); }
 
-.qa-flow { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-.qa-flow li { display: flex; gap: 10px; align-items: flex-start; }
-.qa-flow-n {
-  flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%;
-  background: var(--series-1); color: #fff; font-size: 11px; font-weight: 700;
-  display: inline-flex; align-items: center; justify-content: center;
+/* a text link that is a real button */
+.qa-link {
+  background: none; border: none; padding: 2px 0; cursor: pointer;
+  font-size: 11px; font-weight: 600; color: var(--series-1); font-family: inherit;
+}
+.qa-link:hover { text-decoration: underline; }
+.qa-link:focus-visible, .qa-acc-btn:focus-visible, .qa-filter:focus-visible {
+  outline: 2px solid var(--series-1); outline-offset: 2px; border-radius: 4px;
 }
 
-.qa-case { margin-bottom: 14px; }
-.qa-case h4, .card h4 { font-size: 13px; margin: 14px 0 6px; }
+/* metrics strip */
+.qa-metrics {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px; margin-bottom: 16px;
+}
+.qa-metric {
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; background: var(--plane);
+  min-width: 0;
+}
+.qa-metric-k {
+  font-size: 10px; letter-spacing: 0.07em; font-weight: 700;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.qa-metric-v { font-size: 18px; font-weight: 600; margin-top: 3px; word-break: break-word; }
+.qa-metric-m { font-size: 10px; color: var(--text-muted); margin-top: 2px; line-height: 1.35; }
 
+/* level 3 — key findings */
+.qa-findings { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.qa-findings li {
+  display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap;
+  border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px; background: var(--plane);
+}
+.qa-finding-body { flex: 1 1 240px; min-width: 0; }
+.qa-finding-body b { font-size: 12px; }
+.qa-finding-reason { font-size: 11px; color: var(--text-secondary); line-height: 1.45; margin-top: 2px; }
+
+/* compact horizontal stepper; stacks on narrow screens */
+.qa-steps {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;
+}
+.qa-steps li {
+  display: grid; grid-template-columns: 20px 1fr; gap: 6px 8px; align-items: center;
+  border: 1px solid var(--border); border-radius: 8px; padding: 9px 10px; background: var(--plane);
+}
+.qa-step-n {
+  width: 20px; height: 20px; border-radius: 50%; background: var(--series-1); color: #fff;
+  font-size: 10px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center;
+}
+.qa-step-name { font-size: 12px; font-weight: 600; }
+.qa-step-detail { grid-column: 1 / -1; font-size: 10px; color: var(--text-muted); line-height: 1.4; }
+
+/* level 4 — accordion */
+.qa-details-h { font-size: 13px; margin: 22px 0 2px; }
+.qa-section { padding: 0; overflow: hidden; }
+.qa-acc-h { margin: 0; font-size: inherit; font-weight: inherit; }
+.qa-acc-btn {
+  width: 100%; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: none; border: none; cursor: pointer; text-align: left;
+  padding: 13px 16px; font-family: inherit; color: var(--text-primary);
+}
+.qa-acc-btn:hover { background: var(--plane); }
+.qa-acc-no {
+  flex: 0 0 auto; width: 20px; height: 20px; border-radius: 5px; background: var(--plane);
+  border: 1px solid var(--border); font-size: 10px; font-weight: 700; color: var(--text-secondary);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.qa-acc-title { flex: 1 1 200px; min-width: 0; font-size: 13px; font-weight: 600; }
+.qa-acc-scope {
+  display: block; font-size: 10px; font-weight: 400; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text-muted); margin-top: 1px;
+}
+.qa-acc-caret { color: var(--text-muted); font-size: 11px; }
+.qa-acc-panel { padding: 0 16px 16px; border-top: 1px solid var(--border); }
+.qa-panel-purpose { font-size: 11px; color: var(--text-muted); margin: 12px 0 10px; line-height: 1.5; }
+
+/* tallies, facts and shared reason blocks */
+.qa-tally { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+.qa-tally-item { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; }
+
+.qa-facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px; margin-bottom: 12px;
+}
+.qa-fact { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: var(--plane); }
+.qa-fact-k {
+  font-size: 10px; letter-spacing: 0.06em; font-weight: 700;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.qa-fact-v { font-size: 15px; font-weight: 600; margin-top: 3px; }
+.qa-fact-m { font-size: 10px; color: var(--text-muted); margin-top: 2px; line-height: 1.35; }
+
+.qa-shared-note {
+  border: 1px solid var(--border); border-left: 3px solid var(--axis); border-radius: 8px;
+  padding: 10px 12px; background: var(--plane); font-size: 11px; line-height: 1.5;
+  color: var(--text-secondary); margin-bottom: 12px;
+}
+.qa-shared-note b { display: block; color: var(--text-primary); margin-bottom: 3px; font-size: 11px; }
+
+/* status-filter pills */
+.qa-filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; }
+.qa-filter {
+  border: 1px solid var(--border); border-radius: 999px; background: var(--surface-1);
+  padding: 4px 10px; font-size: 11px; cursor: pointer; color: var(--text-secondary);
+  font-family: inherit;
+}
+.qa-filter.is-active { background: var(--series-1); border-color: var(--series-1); color: #fff; }
+.qa-filter-n { opacity: 0.75; margin-left: 3px; }
+
+/* scenario/control kind — a neutral label, never styled like a status */
+.qa-kind {
+  display: inline-block; font-size: 10px; letter-spacing: 0.03em; padding: 1px 6px;
+  border-radius: 4px; border: 1px solid var(--border); color: var(--text-muted); white-space: nowrap;
+}
+.qa-kind-executable, .qa-kind-evidence_led { color: var(--text-secondary); }
+
+/* QA tables: more columns than the forensic tables, so they size to content and
+   scroll inside .scroll with a sticky header rather than compressing text. */
+.qa-table { table-layout: auto; min-width: 720px; }
+.qa-table thead th {
+  position: sticky; top: 0; z-index: 1; background: var(--surface-1);
+  box-shadow: inset 0 -1px 0 var(--border);
+}
+.qa-table td, .qa-table th { padding: 6px 8px; vertical-align: top; }
+.qa-table .col-status { width: 124px; }
+.qa-table .col-check { width: 200px; }
+.qa-table .col-kind { width: 92px; }
+.qa-table .col-ev { width: 108px; }
+.qa-acc-panel .scroll { max-height: 560px; overflow: auto; }
+
+.xsmall { font-size: 10px; line-height: 1.4; }
+
+/* evidence disclosure */
+.qa-case { margin-bottom: 14px; }
+.qa-case h4, .card h4 { font-size: 12px; margin: 16px 0 6px; }
 .qa-ev > summary {
   cursor: pointer; font-size: 11px; color: var(--text-secondary);
   list-style: revert; padding: 2px 0;
 }
 .qa-ev-body {
   margin-top: 6px; padding: 8px; border: 1px solid var(--border);
-  border-radius: 8px; background: var(--plane); display: grid; gap: 4px;
+  border-radius: 8px; background: var(--plane); display: grid; gap: 4px; min-width: 240px;
 }
-.qa-kv { display: grid; grid-template-columns: 132px 1fr; gap: 8px; font-size: 11px; align-items: start; }
+.qa-kv { display: grid; grid-template-columns: 124px 1fr; gap: 8px; font-size: 11px; align-items: start; }
 .qa-kv-k { color: var(--text-muted); }
 .qa-kv-v { word-break: break-word; min-width: 0; }
 
-/* The QA tables carry more columns than the forensic tables, so they size to
-   content and scroll inside .scroll rather than compressing text to nothing. */
-.card table[data-testid^="qa-"] { table-layout: auto; min-width: 680px; }
-
 @media (max-width: 600px) {
   .qa-kv { grid-template-columns: 1fr; gap: 2px; }
-  .qa-grid { grid-template-columns: 1fr; }
+  .qa-grid, .qa-metrics, .qa-facts { grid-template-columns: 1fr; }
+  .qa-steps { grid-template-columns: 1fr; }
+  .qa-acc-panel { padding: 0 12px 12px; }
+  .qa-acc-btn { padding: 12px; }
 }
