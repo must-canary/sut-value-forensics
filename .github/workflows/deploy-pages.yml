@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+# GitHub Pages was previously configured to serve the repository root directly
+# (build_type "legacy", source master:/). That published the unbuilt Vite dev
+# entry point — index.html referencing /src/main.tsx — which a browser cannot
+# execute, so the deployed site rendered a blank page. This workflow produces a
+# real production build and publishes dist/ instead.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two deployments at once; let a newer push finish rather than cancel it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # The same gates that guard the evidence layer locally. A build that
+      # cannot pass them is not published.
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm run smoke
+
+      # enablement switches the Pages source from the legacy "serve the branch
+      # root" mode to Actions, so this workflow's artifact is what gets served.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
